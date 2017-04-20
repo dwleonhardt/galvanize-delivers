@@ -1,0 +1,21 @@
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.title{
+  margin-top: 10%;
+}
+.parallax-container {
+      height: 450px;
+    }
+
+.catagories {
+  font-size: 30px;
+  color: #e91e63;
+}
