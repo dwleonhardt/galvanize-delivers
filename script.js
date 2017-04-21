@@ -1,18 +1,22 @@
 var table = $("table")[0];
+
+// food variables
 var royale = $(".royale");
-var item = $(royale).find('h5')[0];
-var price = $(royale).find('p')[0];
-// titles
+var pizza = $(".pizza");
+var ribs = $(".ribs");
+var iceCream = $(".iceCream");
+
+// totals
 var subTotal = $('.subTotal')[0];
 var subTotalInt = 0;
-// var pizza = $(".pizza:has(a)");
-// var ribs = $(".ribs:has(a)");
-// var iceCream = $(".iceCream:has(a)");
-$(royale).on('click', 'a', function (event) {
-  // console.log($(price).text());
-  // console.log($(item).text());
 
-  // add to order
+var salesTax = 0.08845;
+var tax = $('.tax')[0];
+var taxInt = 0;
+
+$(royale).on('click', 'a', function (event) {
+  let item = $(royale).find('h5')[0];
+  let price = $(royale).find('p')[0];
   let row = $('<tr>');
   let element = $('<td>');
   let element2 = $('<td>');
@@ -23,23 +27,64 @@ $(royale).on('click', 'a', function (event) {
   $(table).append(row);
   // add subtotal
   subTotalInt += parseFloat($(price).text().substring(1));
-  console.log('$' + subTotalInt.toFixed(2).toString());
-  $(subTotal).html();
-
+  $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
+  var taxInt = subTotalInt * salesTax;
+  $(tax).html('$' + (taxInt).toFixed(2).toString());
 });
-// make rest of click functions
 
-//
-// $(pizza).click(function () {
-//   console.log('works');
-// });
-//
-// $(ribs).click(function () {
-//   console.log('works');
-// });
-//
-// $(iceCream).click(function () {
-//   console.log('works');
-// });
+$(pizza).on('click', 'a', function (event) {
+  let item = $(pizza).find('h5')[0];
+  let price = $(pizza).find('p')[0];
+  let row = $('<tr>');
+  let element = $('<td>');
+  let element2 = $('<td>');
+  element.html($(item).text());
+  $(row).append(element);
+  element2.html($(price).text());
+  $(row).append(element2);
+  $(table).append(row);
+  // add subtotal
+  subTotalInt += parseFloat($(price).text().substring(1));
+  $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
+  $(tax).html('$' + (subTotalInt * salesTax).toFixed(2).toString());
+  var taxInt = subTotalInt * salesTax;
+  $(tax).html('$' + (taxInt).toFixed(2).toString());
+});
 
-// make rest of click functions
+$(ribs).on('click', 'a', function (event) {
+  let item = $(ribs).find('h5')[0];
+  let price = $(ribs).find('p')[0];
+  let row = $('<tr>');
+  let element = $('<td>');
+  let element2 = $('<td>');
+  element.html($(item).text());
+  $(row).append(element);
+  element2.html($(price).text());
+  $(row).append(element2);
+  $(table).append(row);
+  // add subtotal
+  subTotalInt += parseFloat($(price).text().substring(1));
+  $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
+  $(tax).html('$' + (subTotalInt * salesTax).toFixed(2).toString());
+  var taxInt = subTotalInt * salesTax;
+  $(tax).html('$' + (taxInt).toFixed(2).toString());
+});
+
+$(iceCream).on('click', 'a', function (event) {
+  let item = $(iceCream).find('h5')[0];
+  let price = $(iceCream).find('p')[0];
+  let row = $('<tr>');
+  let element = $('<td>');
+  let element2 = $('<td>');
+  element.html($(item).text());
+  $(row).append(element);
+  element2.html($(price).text());
+  $(row).append(element2);
+  $(table).append(row);
+  // add subtotal
+  subTotalInt += parseFloat($(price).text().substring(1));
+  $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
+  $(tax).html('$' + (subTotalInt * salesTax).toFixed(2).toString());
+  var taxInt = subTotalInt * salesTax;
+  $(tax).html('$' + (taxInt).toFixed(2).toString());
+});
