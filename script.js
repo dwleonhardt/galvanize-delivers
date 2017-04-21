@@ -14,6 +14,8 @@ var salesTax = 0.08845;
 var tax = $('.tax')[0];
 var taxInt = 0;
 
+var total = $('.total')[0];
+
 $(royale).on('click', 'a', function (event) {
   let item = $(royale).find('h5')[0];
   let price = $(royale).find('p')[0];
@@ -29,7 +31,8 @@ $(royale).on('click', 'a', function (event) {
   subTotalInt += parseFloat($(price).text().substring(1));
   $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
   var taxInt = subTotalInt * salesTax;
-  $(tax).html('$' + (taxInt).toFixed(2).toString());
+  $(tax).html('$' + taxInt.toFixed(2).toString());
+  $(total).html('$' + (subTotalInt + taxInt).toFixed(2).toString());
 });
 
 $(pizza).on('click', 'a', function (event) {
@@ -48,7 +51,8 @@ $(pizza).on('click', 'a', function (event) {
   $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
   $(tax).html('$' + (subTotalInt * salesTax).toFixed(2).toString());
   var taxInt = subTotalInt * salesTax;
-  $(tax).html('$' + (taxInt).toFixed(2).toString());
+  $(tax).html('$' + taxInt.toFixed(2).toString());
+  $(total).html('$' + (subTotalInt + taxInt).toFixed(2).toString());
 });
 
 $(ribs).on('click', 'a', function (event) {
@@ -67,7 +71,8 @@ $(ribs).on('click', 'a', function (event) {
   $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
   $(tax).html('$' + (subTotalInt * salesTax).toFixed(2).toString());
   var taxInt = subTotalInt * salesTax;
-  $(tax).html('$' + (taxInt).toFixed(2).toString());
+  $(tax).html('$' + taxInt.toFixed(2).toString());
+  $(total).html('$' + (subTotalInt + taxInt).toFixed(2).toString());
 });
 
 $(iceCream).on('click', 'a', function (event) {
@@ -86,5 +91,6 @@ $(iceCream).on('click', 'a', function (event) {
   $(subTotal).html('$' + subTotalInt.toFixed(2).toString());
   $(tax).html('$' + (subTotalInt * salesTax).toFixed(2).toString());
   var taxInt = subTotalInt * salesTax;
-  $(tax).html('$' + (taxInt).toFixed(2).toString());
+  $(tax).html('$' + taxInt.toFixed(2).toString());
+  $(total).html('$' + (subTotalInt + taxInt).toFixed(2).toString());
 });

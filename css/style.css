@@ -19,3 +19,9 @@ main {
   font-size: 30px;
   color: #e91e63;
 }
+.input-field input[type=text]:focus {
+    border-bottom: #4caf50;
+}
+  .input-field .prefix.active {
+     color: #e91e63;
+}
