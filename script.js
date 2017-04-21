@@ -13,10 +13,12 @@ var subTotalInt = 0;
 var salesTax = 0.08845;
 var tax = $('.tax')[0];
 var taxInt = 0;
-
+// l;kasdkhg;ladfknboasndf;oiagh;aksdhffksd'giadsx
 var total = $('.total')[0];
 
 $(royale).on('click', 'a', function (event) {
+  $target = $(event.target);
+  console.log($target.data('item'), $target.data('price'));
   let item = $(royale).find('h5')[0];
   let price = $(royale).find('p')[0];
   let row = $('<tr>');
