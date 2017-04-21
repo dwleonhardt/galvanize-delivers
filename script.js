@@ -28,3 +28,23 @@ $(menu).on('click', 'a', function (event) {
   $(tax).html('$' + taxInt.toFixed(2).toString());
   $(total).html('$' + (subTotalInt + taxInt).toFixed(2).toString());
 });
+
+// form validation
+var submit = $('#submitButton')[0];
+var $deliveryForm = $('#delivery');
+var $phone = $('#icon_telephone.validate');
+
+// $('#myform').submit(function() {
+    // DO STUFF...
+//     return true; // return false to cancel form action
+// });
+
+
+
+$deliveryForm.submit(function(event) {
+  event.preventDefault();
+  console.log($('.valid'));
+  if ($('.valid').length > 2) {
+    Materialize.toast('Thank you for your order!', 4000);
+  } 
+});
