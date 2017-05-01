@@ -13,6 +13,7 @@ var total = $('.total')[0];
 
 $(menu).on('click', 'a', function (event) {
   $target = $(event.target);
+  console.log($target);
   let item = $target.data('item');
   let row = $('<tr>');
   let element = $('<td>');
